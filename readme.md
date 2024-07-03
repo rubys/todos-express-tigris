@@ -1,3 +1,14 @@
+# Express • [TodoMVC](http://todomvc.com), adapted for [fly.io](https://fly.io/)
+
+This is a fork of [jaredhanson/todos-express-sqlite](https://github.com/jaredhanson/todos-express-sqlite), with the following modifications:
+
+* `db.js` is modified to fetch an sqlite3 database from Tigris before every query,
+  and to push the sqlite3 database to Tigris after every update.
+
+With these changes multiple replicas of this application can be deployed, even
+in multiple regions.  **Warning** no locking is in place so simultaneous
+updates can result in updates becoming lost. 
+
 # Express • [TodoMVC](http://todomvc.com)
 
 > Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
